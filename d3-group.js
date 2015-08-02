@@ -22,7 +22,7 @@ d3.group = function() {
 
     group.on = function(fn) {
         data = data.filter(function(d) {
-            if (fn.call(null, d) === true) {
+            if (fn.apply(null, arguments) === true) {
                 matches.push(d);
                 return false;
             } else {
